@@ -17,22 +17,9 @@ Abaixo, os resultados obtidos durante o ciclo de testes:
 
 | ID | Cenário de Teste | Objetivo | Status | Gravidade |
 |:---:|:---|:---|:---:|:---:|
-| 01 | Login Válido | [cite_start]Validar acesso com sucesso [cite: 38] | ✅ Passou | [cite_start]Baixa [cite: 43] |
-| 02 | Senha Incorreta | [cite_start]Validar mensagem de erro [cite: 47] | ✅ Passou | [cite_start]Baixa [cite: 52] |
-| 03 | SQL Injection | [cite_start]Bloqueio de ataques no login [cite: 54] | ✅ Passou | [cite_start]Crítica [cite: 59] |
-| 04 | Cadastro Válido | [cite_start]Criar novo usuário [cite: 62] | ✅ Passou | [cite_start]N/A [cite: 67] |
-| 05 | E-mail Inválido | [cite_start]Validar formato de e-mail no cadastro [cite: 71] | ✅ Passou | [cite_start]N/A [cite: 76] |
-| 06 | Criar Contato | [cite_start]Adicionar contato com sucesso [cite: 79] | ✅ Passou | [cite_start]N/A [cite: 84] |
-| 07 | Nome Obrigatório | [cite_start]Impedir criação sem nome [cite: 88] | ✅ Passou | [cite_start]N/A [cite: 93] |
-| 08 | Editar Contato | [cite_start]Atualizar dados existentes [cite: 95] | ✅ Passou | [cite_start]N/A [cite: 100] |
-| 09 | Excluir Contato | [cite_start]Remover registro da lista [cite: 102] | ✅ Passou | [cite_start]N/A [cite: 108] |
-| 10 | Performance | [cite_start]Carga de 20 a 500 contatos [cite: 114, 116] | ✅ Passou | [cite_start]Média [cite: 119] |
-| 11 | Responsividade | [cite_start]Teste Desktop, Tablet e Mobile [cite: 123, 126] | ✅ Passou | [cite_start]Média [cite: 129] |
-| 12 | Segurança XSS | [cite_start]Sanitização de scripts em campos [cite: 131, 134] | ✅ Passou | [cite_start]Crítica [cite: 136] |
-| 13 | Login API | [cite_start]Validar emissão de JWT [cite: 138, 139] | ✅ Passou | [cite_start]N/A [cite: 145] |
-| 14 | API Criar Contato | [cite_start]Criar contato via POST [cite: 154] | ✅ Passou | [cite_start]N/A [cite: 164] |
-| 15 | Segurança API | [cite_start]Impedir acesso sem token (401) [cite: 172, 185] | ✅ Passou | [cite_start]N/A [cite: 183] |
-| 16 | API Validação | [cite_start]Bloqueio de e-mail inválido via backend [cite: 191, 192] | ✅ Passou | [cite_start]N/A [cite: 202] |
+ID,Objetivo,Passos,Resultado Esperado,Resultado Obtido,Gravidade
+15,Validar que a API bloqueia requisições não autenticadas.,1. Enviar requisição POST para /API/CONTACTS sem o token de autorização no header.,Status 401 (Unauthorized) e mensagem de erro de autenticação necessária.,,
+16,Validar regras de negócio no backend para e-mails inválidos.,1. Enviar POST para /API/CONTACTS com e-mail no formato usuario@@dominio.com.,"Status 400 (Bad Request) e mensagem ""E-mail inválido"".",,
 
 ---
 
